@@ -11,10 +11,13 @@ export default function BreedDetail(){
     const {id} = useParams();
     const [dogId, setDogId] = useState(null); 
 
+    /* const PATH = "http://localhost:3001" */
+    const PATH = 'https://backend-dogs-production.up.railway.app'
+
 
     useEffect(() => { 
         const axiosData = async() => {
-        const response = await axios.get(`http://localhost:3001/dogs/${id}`)
+        const response = await axios.get(`${PATH}/${id}`)
         setDogId(response.data)
     }
     axiosData()

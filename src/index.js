@@ -5,7 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom"; 
 import store from "./store"; 
-import {Provider} from "react-redux";  
+import {Provider} from "react-redux";
+
+/* axios.defaults.baseURL = 'http://localhost:3001'; */ // esto le avisa a axios que todas las peticiones que haga empiecen con este codigo. !!!! DESCOMENTAR ESTO CUANDO QUEREMOS TRABAJAR CON EL PROYECTO DE FORMA LOCAL Y COMENTAR LO DE ABAJO
+axios.defaults.baseURL = 'https://backend-dogs-production.up.railway.app'; 
 
 ReactDOM.render(
   <Provider store = {store}>

@@ -9,7 +9,8 @@ export const FILTER_DB_OR_API_BREED = "FILTER_DB_OR_API_BREED";
 export const SEARCH_BREED_NAME = "SEARCH_BREED_NAME";
 export const POST_NEW_BREED = "POST_NEW_BREED";
 
-const PATH = "http://localhost:3001"
+/* const PATH = "http://localhost:3001" */
+const PATH = 'https://backend-dogs-production.up.railway.app'
 
 
 export function getAllBreeds(){
