@@ -1,0 +1,27 @@
+.body{
+    height: 100vh;
+    background-image: url("../../img/the-dk-photography-yG_8-55cXV4-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow:visible;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeButton{
+    align-self: center;
+    width: fit-content;
+    background-color: rgba(225, 217, 217, 0.5);
+    border-radius: 5px;
+    border: solid black;
+    margin: 5px;
+}
+
+.homeButton:hover{
+    background-color: rgba(225, 217, 217, 0.8);
+}
+
+.navLink{
+    text-decoration: none;
+    color: orangered;
+}
