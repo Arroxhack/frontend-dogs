@@ -1,32 +1,55 @@
 .backgroundPicture{
-    height: 100vh;
     background-image: url("../../img/linda-segerfeldt-oEcsvUfCr1c-unsplash.jpg");
-    background-size: cover;
+    height: 100vh;
+    /* background-size: cover; */
     background-position: center;
     overflow: hidden;
-}
-
-.button{
-    /* border: 2px solid red; */
-    position: relative;
-    top: 130px;
-    left: -230px;
-    border-color: rgb(255, 242, 0);
-    /* border-color: rgb(255, 166, 0); */
-    border-radius: 10px;
-    /* background-color: rgba(0, 255, 255, 0.200); */
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    box-shadow: rgba(217, 136, 15, 0.600) 5px 5px, rgba(217, 136, 15, 0.5) 10px 10px, rgba(217, 136, 15, 0.4) 15px 15px, rgba(217, 136, 15, 0.3) 20px 20px, rgba(217, 136, 15, 0.2) 25px 25px, rgba(217, 136, 15, 0.1) 30px 30px,
-    rgba(217, 136, 15, 0.05) 35px 35px;
-}
-
-.button:hover{
-    background-color: rgba(255, 69, 0, 0.2);
+    display: flex;
+    flex-direction: row;
 }
 
 .navLink{
-    padding: -20px;
+    padding: 0px;
+    margin: 0px;
+    height: 20%;
+    width: 15%;
+    display: flex;
     text-decoration: none;
-    color: orangered;
 }
+
+.button{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: 150px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: rgba(217, 136, 15, 0.600) 5px 5px, rgba(217, 136, 15, 0.5) 10px 10px, rgba(217, 136, 15, 0.4) 15px 15px, rgba(217, 136, 15, 0.3) 20px 20px, rgba(217, 136, 15, 0.2) 25px 25px, rgba(217, 136, 15, 0.1) 30px 30px,
+    rgba(217, 136, 15, 0.05) 35px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content:space-evenly;
+}
+
+.button p{
+    margin: 0px;
+    padding-left: 1vw;
+    color: black;
+    font-weight: 800;
+    /* font-size: 14px; */
+    font-size: 3.0vw;
+    font-size: 3.0vh;
+    font-size: 2vmin;
+    
+}
+
+.button:hover{
+    background-color: rgba(255, 69, 0, 0.8);
+}
+
+
+
+

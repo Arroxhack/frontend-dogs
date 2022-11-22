@@ -13,6 +13,7 @@
     border: 1px solid black;  
     position: relative;
     background-color: rgba(250, 235, 215, 0.2);
+    margin-bottom: 2vh;
 }
 
 .name{
@@ -36,7 +37,7 @@
     margin-bottom: 2px;
     width: fit-content;
     height: fit-content;
-    border: 2px solid black;
+    border: 2px dotted black;
     color: black;
 }
 
@@ -45,4 +46,6 @@
     width: fit-content;
     height: fit-content;
     color:black;
+    border: 2px dotted black;
+    background-color: rgba(0, 255, 255, 0.2);
 }

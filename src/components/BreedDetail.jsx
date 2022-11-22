@@ -29,7 +29,12 @@ export default function BreedDetail(){
             <button className={styles.homeButton}>
                 <NavLink className={styles.navLink} exact to="/home">Home</NavLink>
             </button>
-                {dogId ? <DetailCard dogId={dogId[0]}/> : <h1>Loading...</h1> }
+                {dogId ?
+                <DetailCard dogId={dogId[0]}/>
+                : 
+                <div className={styles.loading}>
+                    <h1>Loading...</h1>    
+                </div>}
         </div>
     ) 
 }

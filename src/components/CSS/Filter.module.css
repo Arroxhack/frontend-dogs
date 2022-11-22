@@ -1,6 +1,7 @@
 .bodyDivFilter{
-    position: relative;
-    top: -3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .select{

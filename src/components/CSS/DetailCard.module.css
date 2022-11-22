@@ -1,5 +1,6 @@
 
 .bodyDiv{
+    margin-top: 6vh;
     display: flex;
     width: 400px;
     height: 420px;
@@ -34,7 +35,7 @@
     margin-bottom: 2px;
     width: fit-content;
     height: fit-content;
-    border: 2px solid black;
+    border: 2px dotted black;
     color: black;
 }
 

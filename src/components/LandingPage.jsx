@@ -6,10 +6,16 @@ import styles from "./CSS/LandingPage.module.css";
 export default function LandingPage() {
   return (
     <div className={styles.backgroundPicture}>
-        <button className={styles.button}>
-            <NavLink className={styles.navLink} exact to="/home" >BRING.. THE.. DOGGIES!
-            </NavLink>
-        </button>
+
+        <NavLink className={styles.navLink} exact to="/home" >
+
+          <button className={styles.button}>
+            <p>BRING..</p>
+            <p>THE..</p>
+            <p>DOGGIES!</p>
+          </button>
+
+        </NavLink>
         
     </div>
   )

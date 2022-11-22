@@ -33,7 +33,13 @@ export default function Breeds(){
         dispatch(getAllTemperaments())
     }, [dispatch]) 
 
-    if(currentBreeds.length === 0) {return(<h1>Loading...</h1>)}
+    if(currentBreeds.length === 0) {
+        return (
+            <div className={styles.loadingDiv}>
+                <h1>Loading...</h1>
+            </div>
+        )
+    }
     return(
         <div className={styles.bodyDiv}> 
             <div className={styles.orderFilterDiv}>
