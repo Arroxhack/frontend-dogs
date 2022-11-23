@@ -10,6 +10,7 @@
 
 .homeButton{
     align-self: center;
+    min-width: 66px;
     width: 7vw;
     height: 6vh;
     background-color: rgba(225, 217, 217, 0.5);
@@ -20,13 +21,22 @@
     margin-bottom: 5vh;
 }
 
+/* .button{
+    background-color: rgba(225, 217, 217, 0.5);
+    border-radius: 1em;
+    border: 2px solid black;
+    padding: 1vw;
+} */
+
 .homeButton:hover{
     background-color: rgba(0, 255, 255, 0.2);
 }
 
 .navLink{
     text-decoration: none;
-    color: orangered;
+    color: black;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .h4{
@@ -34,6 +44,7 @@
    color: orangered;
    background-color: rgba(225, 217, 217, 0.6);
    border: 2px dotted black;
+   min-width: 345px;
 }
 
 .formDiv{

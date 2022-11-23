@@ -21,12 +21,14 @@
 }
 
 .homeButton:hover{
-    background-color: rgba(225, 217, 217, 0.8);
+    background-color: rgba(0, 255, 255, 0.2);
 }
 
 .navLink{
     text-decoration: none;
-    color: orangered;
+    color: black;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .loading{
