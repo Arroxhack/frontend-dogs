@@ -10,7 +10,8 @@ export const SEARCH_BREED_NAME = "SEARCH_BREED_NAME";
 export const POST_NEW_BREED = "POST_NEW_BREED";
 
 /* const PATH = "http://localhost:3001" */
-const PATH = 'https://backend-dogs-production.up.railway.app'
+/* const PATH = 'https://backend-dogs-production.up.railway.app' */
+const PATH = 'https://pi-dogs-backend-978w.onrender.com'
 
 
 export function getAllBreeds(){

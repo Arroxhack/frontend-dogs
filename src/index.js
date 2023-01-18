@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App'; 
 import reportWebVitals from './reportWebVitals';
+// Inicia aca
+
 import {BrowserRouter} from "react-router-dom"; 
 import store from "./store"; 
 import {Provider} from "react-redux";
 import axios from "axios";
 
 /* axios.defaults.baseURL = 'http://localhost:3001'; */ // esto le avisa a axios que todas las peticiones que haga empiecen con este codigo. !!!! DESCOMENTAR ESTO CUANDO QUEREMOS TRABAJAR CON EL PROYECTO DE FORMA LOCAL Y COMENTAR LO DE ABAJO
-axios.defaults.baseURL = 'https://backend-dogs-production.up.railway.app'; 
+/* axios.defaults.baseURL = 'https://backend-dogs-production.up.railway.app';  */
+axios.defaults.baseURL = 'https://pi-dogs-backend-978w.onrender.com'; 
 
 ReactDOM.render(
   <Provider store = {store}>

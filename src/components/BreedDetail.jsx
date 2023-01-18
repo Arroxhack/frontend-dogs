@@ -12,7 +12,8 @@ export default function BreedDetail(){
     const [dogId, setDogId] = useState(null); 
 
     /* const PATH = "http://localhost:3001" */
-    const PATH = 'https://backend-dogs-production.up.railway.app'
+    /* const PATH = 'https://backend-dogs-production.up.railway.app' */
+    const PATH = 'https://pi-dogs-backend-978w.onrender.com'
 
 
     useEffect(() => { 
