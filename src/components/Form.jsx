@@ -140,7 +140,7 @@ let submitDog = (e) => {
         <button className={styles.homeButton}>
             <NavLink className={styles.navLink} exact to="/home">Home</NavLink>
         </button>
-        <h4 className={styles.h4}>Complete the form to create your own breed!</h4>
+        <h4 className={styles.h4}>Complete this form to create your own breed!</h4>
         <div className={styles.formDiv}>
             <form onSubmit={submitDog}>
                 <div> 

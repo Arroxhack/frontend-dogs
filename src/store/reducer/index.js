@@ -53,10 +53,10 @@ export default function reducer(state=initialState, action){
              }
                 let allBreeds2 = state.noModificationBreeds
                 let filteredBreedsDbApi = action.payload === "Api" ? allBreeds2.filter(e => typeof e.id === "number") : allBreeds2.filter(e => typeof e.id === "string")
-                console.log(filteredBreedsDbApi)
+                // console.log(filteredBreedsDbApi)
                 return{
                     ...state,
-                    breeds: filteredBreedsDbApi.length > 0 ? filteredBreedsDbApi : [{error: "No created breeds yet"}]
+                    breeds: filteredBreedsDbApi.length > 0 ? filteredBreedsDbApi : ["No created breeds yet"]
                 }
 
         case SORT:  //payload: "ascendente"

@@ -12,8 +12,13 @@ export default function Breeds(){
 
     const dispatch = useDispatch(); 
 
-    const breeds = useSelector(state => state.breeds); 
+    const breeds = useSelector(state => state.breeds);
+    // console.log("breeds: ", breeds) 
     
+    useEffect(() => { 
+        dispatch(getAllBreeds())
+        dispatch(getAllTemperaments())
+    }, [dispatch]) 
 
     // Get current breed
     const [currentPage, setCurrentPage] = useState(1);
@@ -28,12 +33,10 @@ export default function Breeds(){
         setCurrentPage(pageNumber)
     } 
 
-    useEffect(() => { 
-        dispatch(getAllBreeds())
-        dispatch(getAllTemperaments())
-    }, [dispatch]) 
 
-    if(currentBreeds.length === 0) {
+    // console.log("currentBreeds: ", currentBreeds) // current breeds = [{}, {}, {}]
+
+    if(breeds.length === 0) {
         return (
             <div className={styles.loadingDiv}>
                 <h1>Loading...</h1>
@@ -47,8 +50,8 @@ export default function Breeds(){
                 <Filter breeds={breeds}/>
             </div>
             <div className={styles.cardsDivContainer}>
-                {currentBreeds[0].error ? <h4>{currentBreeds[0].error}</h4> 
-                : currentBreeds.map(breed => {
+                {typeof currentBreeds[0] === "string" ? <h4>{currentBreeds[0]}</h4> :
+                 currentBreeds.map(breed => {
                         return(
                                 <BreedCard key={breed.id}
                                 id={breed.id} 

@@ -4,7 +4,7 @@ import styles from "./CSS/DetailCard.module.css";
 export default function DetailCard({dogId}) {
   if(dogId.notFound || dogId === null){
     return (
-      <div>
+      <div className={styles.divNotFound}>
         <h3>{dogId.notFound}</h3>
       </div>
     )
