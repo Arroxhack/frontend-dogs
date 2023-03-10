@@ -1,30 +1,22 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import DetailCard from './DetailCard';
 import styles from "./CSS/BreedDetail.module.css";
 import { NavLink } from 'react-router-dom';
+import { getBreedDetail } from '../store/actions';
 
 export default function BreedDetail(){
 
     const {id} = useParams();
     const [dogId, setDogId] = useState(null); 
 
-    /* const PATH = "http://localhost:3001" */
-    /* const PATH = 'https://pi-dogs-backend-978w.onrender.com' */
-    const PATH = 'https://backend-dogs-production.up.railway.app'
-    
-
-
     useEffect(() => { 
-        const axiosData = async() => {
-        const response = await axios.get(`${PATH}/dogs/${id}`)
-        setDogId(response.data)
-    }
-    axiosData()
-    .catch(e => console.log(e))
+    getBreedDetail(id)
+        .then(breedDetail => setDogId(breedDetail))
+        .catch(e => console.log(e))
     },[id])
+
+   
 
     return(
         <div className={styles.body}>
@@ -32,10 +24,11 @@ export default function BreedDetail(){
                 <NavLink className={styles.navLink} exact to="/home">Home</NavLink>
             </button>
                 {dogId ?
-                <DetailCard dogId={dogId[0]}/>
+                <DetailCard dogId={dogId}/>
                 : 
-                <div className={styles.loading}>
-                    <h1>Loading...</h1>    
+                <div className={styles.containerLoading}>
+                    <h1 className={styles.h1Loading}>Loading</h1>
+                    <div className={styles.loading}></div>
                 </div>}
         </div>
     ) 

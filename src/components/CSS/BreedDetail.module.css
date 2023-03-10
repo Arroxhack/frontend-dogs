@@ -6,6 +6,7 @@
     overflow:visible;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .homeButton{
@@ -31,9 +32,45 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.loading{
+.containerLoading{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
     justify-content: center;
-    margin-top: 20vh;
+    align-items: center;
+    /* margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%); */
+}
+
+.loading{
+    margin: 0;
+    border: 6px solid #ccc;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-top-color: black;
+    border-left-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+    animation: spin 1s infinite ease-in-out;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.h1Loading{
+    color: white;
+    opacity: 80%;
 }

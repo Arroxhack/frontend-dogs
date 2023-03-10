@@ -10,12 +10,15 @@ import styles from "./CSS/Breeds.module.css";
 
 export default function Breeds(){
 
+    // const [loading, setLoading] = useState(false);
+
     const dispatch = useDispatch(); 
 
     const breeds = useSelector(state => state.breeds);
-    // console.log("breeds: ", breeds) 
+    console.log("breeds: ", breeds) 
     
     useEffect(() => { 
+        // setLoading(true)
         dispatch(getAllBreeds())
         dispatch(getAllTemperaments())
     }, [dispatch]) 
@@ -33,16 +36,6 @@ export default function Breeds(){
         setCurrentPage(pageNumber)
     } 
 
-
-    // console.log("currentBreeds: ", currentBreeds) // current breeds = [{}, {}, {}]
-
-    if(breeds.length === 0) {
-        return (
-            <div className={styles.loadingDiv}>
-                <h1>Loading...</h1>
-            </div>
-        )
-    }
     return(
         <div className={styles.bodyDiv}> 
             <div className={styles.orderFilterDiv}>
@@ -50,7 +43,14 @@ export default function Breeds(){
                 <Filter breeds={breeds}/>
             </div>
             <div className={styles.cardsDivContainer}>
-                {typeof currentBreeds[0] === "string" ? <h4>{currentBreeds[0]}</h4> :
+                {!breeds.length ?
+                <div className={styles.containerLoading}>
+                    <h1 className={styles.h1Loading}>Loading</h1>
+                    <div className={styles.loading}>
+                    </div>
+                </div>
+                :
+                typeof currentBreeds[0] === "string" ? <h4>{currentBreeds[0]}</h4> :
                  currentBreeds.map(breed => {
                         return(
                                 <BreedCard key={breed.id}
@@ -62,7 +62,8 @@ export default function Breeds(){
                                 max_weight={breed.max_weight ? breed.max_weight : 0}
                                 />
                         )
-                })}
+                })
+                }
             </div>
                 <Pagination 
                 breedsPerPage={breedsPerPage} 

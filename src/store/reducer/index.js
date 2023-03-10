@@ -61,12 +61,13 @@ export default function reducer(state=initialState, action){
 
         case SORT:  //payload: "ascendente"
             let orderedBreeds = [...state.breeds]
+            console.log("orderedBreeds: ", orderedBreeds);
             orderedBreeds = orderedBreeds.sort((a, b) => {
                 if(action.payload === "ascendente" || action.payload === "descendente"){
-                    if(a.name > b.name){
+                    if(a.name.toLowerCase() > b.name.toLowerCase()){
                         return action.payload === "ascendente" ? 1 : -1; 
                     }
-                    if(a.name < b.name){
+                    if(a.name.toLowerCase() < b.name.toLowerCase()){
                         return action.payload === "ascendente" ? -1 : 1;
                     }
                 }

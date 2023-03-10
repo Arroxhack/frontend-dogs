@@ -11,21 +11,21 @@ export default function Home() {
 
       <div className={styles.searchBarCreateDogContainer}>
 
-        <div className={styles.searchBarDiv}>
+          <div className={styles.searchBarDiv}>
 
-          <SearchBar/>
+            <SearchBar/>
 
-        </div>
+          </div>
 
-        <div className={styles.buttonDiv}>
+          <div className={styles.buttonDiv}>
 
-            <button className={styles.button}>
+              <button className={styles.button}>
 
-              <NavLink className={styles.navLink} exact to="/home/createDog">+ Create new breed!</NavLink>
+                <NavLink className={styles.navLink} exact to="/home/createDog">+ Create new breed!</NavLink>
 
-            </button>
+              </button>
 
-        </div>
+          </div>
 
       </div>
       
