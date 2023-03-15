@@ -19,7 +19,6 @@ export default function SearchBar() {
     }, [search, dispatch])
 
   return (
-    <div className={styles.inputDiv}>
         <input
         className={styles.input}  
         type="text"  
@@ -27,6 +26,5 @@ export default function SearchBar() {
         placeholder='Enter breed name'
         value = {search}
         />
-    </div>
   )
 }

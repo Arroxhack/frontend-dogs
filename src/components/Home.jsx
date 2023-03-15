@@ -1,29 +1,52 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import SearchBar from './SearchBar';
 import Breeds from './Breeds';
-import { NavLink } from 'react-router-dom';
 import styles from "./CSS/Home.module.css";
+import Order from './Order';
+import Filter from './Filter';
+import {useHistory } from 'react-router-dom';
 
 export default function Home() {
+
+  const breeds = useSelector(state => state.breeds);
+
+  let history = useHistory();
+
+  let handleClick = () => {
+    history.push("/home/createDog")
+  }
+
   return (
 
     <div className={styles.body}> 
 
-      <div className={styles.searchBarCreateDogContainer}>
+      {/* Header container */}
+      <div className={styles.headerDivContainer}>
 
+          {/* Searchbar */}
           <div className={styles.searchBarDiv}>
-
             <SearchBar/>
-
           </div>
 
-          <div className={styles.buttonDiv}>
+          {/* Button-Order-Filter container */}
+          <div className={styles.orderFilterButtonContainer}>
 
-              <button className={styles.button}>
+            {/* Order and Filter */}
+            <div className={styles.orderAndFilterDiv}>
+              <Order/>
+              <Filter breeds={breeds}/>
+            </div>
 
-                <NavLink className={styles.navLink} exact to="/home/createDog">+ Create new breed!</NavLink>
-
-              </button>
+            {/* Button */}
+            <div className={styles.buttonDiv}>
+                <button 
+                className={styles.button}
+                onClick={handleClick}
+                >
+                  <p>CREATE NEW BREED</p>
+                </button> 
+            </div>
 
           </div>
 

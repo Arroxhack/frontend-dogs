@@ -6,59 +6,65 @@
     background-size: cover;
     background-position: center;
     /* overflow: hidden; */
-
     /* background-color: #a4ffce; */
     /* background-color: rgb(249,228,209); */
     display: flex;
     flex-direction: column;
 }
 
-.searchBarCreateDogContainer{
-    background-color: rgba(245, 245, 220, 0.6); 
+.headerDivContainer{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* height: 15%; */
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255,255,255, 0.6);
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    margin-bottom: 1%;
 }
 
-
 .searchBarDiv{
-    align-self: center;
-    justify-self: center;
-    margin-top: 1vh;
-    /* display: flex;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.orderFilterButtonContainer{
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    width: 70vw;
+}
+
+.orderAndFilterDiv{
+    grid-column-start: 3;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: fit-content;
-    top: -20px;
-    align-self: center; */
 }
 
 .buttonDiv{
-    align-self:flex-end;
-    justify-self: flex-end;
-    margin-right: 6vw;
+    grid-column-start: 5;
+    display: flex;
+    justify-content: center;
 }
 
 .button{
-    background-color: rgba(225, 217, 217, 0.5);
-    border-radius: 1em;
-    border: 2px solid black;
-    padding: 1vw;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 1.5em;
 }
-
 
 .button:hover{
     background-color: rgba(0, 255, 255, 0.2);
+    cursor: pointer;
 }
 
-.navLink{
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
+.button p{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
 
 
 

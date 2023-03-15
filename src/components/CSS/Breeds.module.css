@@ -25,9 +25,9 @@
 .cardsDivContainer{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-bottom: 2vh;
-    max-width: 1000px;
+    width: 75vw;
     flex-wrap: wrap;
 }
 
@@ -38,12 +38,6 @@
     height: 50vh;
     justify-content: center;
     align-items: center;
-    /* margin: 0;
-    padding: 0;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%); */
 }
 
 .loading{

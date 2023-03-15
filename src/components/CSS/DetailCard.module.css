@@ -1,17 +1,20 @@
 
 .bodyDiv{
-    margin-top: 6vh;
     display: flex;
-    width: 400px;
-    height: 420px;
+    width: 40vw;
+    min-width: 340px;
+    height: 70vh;
     flex-direction: column;
     align-items:center;
-    justify-content: space-between;
-    border: 1px solid black;  
-    position: relative;
-    align-self: center;
-    top: 15px;
-    background-color: rgba(250, 235, 215, 0.4);
+    justify-content: space-evenly;
+    border: 2px solid black;  
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.pairDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .name{
@@ -19,33 +22,32 @@
     margin-bottom: 1px;
     width: fit-content;
     height: fit-content; 
-    text-decoration: underline;
-    color: rgba(127, 255, 212);
+    color: black;
 }
 
 .image{
-    width: 240px;
-    height: 180px;
+    width: 60%;
+    min-width: 200px;
+    height: 45%;
     border: 2px solid black;
 }
 
 .temperament{
-    background-color: rgba(0, 255, 255, 0.2);
     margin: 0;
-    margin-bottom: 2px;
-    width: fit-content;
-    height: fit-content;
-    border: 2px dotted black;
+    margin-bottom: 3px;
     color: black;
+    text-align: center;
 }
 
 .weightAndHeight{
     margin: 0;
-    width: fit-content;
-    height: fit-content;
     color: black;
 }
 
 .divNotFound{
-    align-self: center;
+    margin: 0;
+    border: 2px solid black;
+    background-color: white;
+    padding: 2vw;
+    color: red;
 }

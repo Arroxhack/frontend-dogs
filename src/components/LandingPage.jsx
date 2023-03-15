@@ -5,11 +5,11 @@ import styles from "./CSS/LandingPage.module.css";
 
 export default function LandingPage() {
 
-  let history = useHistory();
+  const history = useHistory();
 
   let handleClick = () => {
     history.push("/home")
-  }
+  };
 
   return (
     <div className={styles.backgroundPicture}>

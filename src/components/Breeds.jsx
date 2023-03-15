@@ -4,13 +4,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAllBreeds, getAllTemperaments} from "../store/actions/index"; 
 import Pagination from "./Pagination";
 import BreedCard from "./BreedCard";
-import Order from "./Order";
-import Filter from "./Filter";
 import styles from "./CSS/Breeds.module.css";
 
 export default function Breeds(){
-
-    // const [loading, setLoading] = useState(false);
 
     const dispatch = useDispatch(); 
 
@@ -38,19 +34,23 @@ export default function Breeds(){
 
     return(
         <div className={styles.bodyDiv}> 
-            <div className={styles.orderFilterDiv}>
-                <Order/>
-                <Filter breeds={breeds}/>
-            </div>
+
             <div className={styles.cardsDivContainer}>
+                
                 {!breeds.length ?
+
                 <div className={styles.containerLoading}>
                     <h1 className={styles.h1Loading}>Loading</h1>
                     <div className={styles.loading}>
                     </div>
                 </div>
+
                 :
-                typeof currentBreeds[0] === "string" ? <h4>{currentBreeds[0]}</h4> :
+
+                typeof currentBreeds[0] === "string" 
+                ? 
+                <h4>{currentBreeds[0]}</h4> 
+                :
                  currentBreeds.map(breed => {
                         return(
                                 <BreedCard key={breed.id}
@@ -62,14 +62,15 @@ export default function Breeds(){
                                 max_weight={breed.max_weight ? breed.max_weight : 0}
                                 />
                         )
-                })
-                }
+                })}
             </div>
+
                 <Pagination 
                 breedsPerPage={breedsPerPage} 
                 totalBreeds={breeds.length} 
                 paginate={paginate} 
                 />
+
         </div>
     )
 }

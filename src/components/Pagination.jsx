@@ -9,7 +9,8 @@ export default function Pagination({breedsPerPage, totalBreeds, paginate}) { // 
     }
 
   return (
-    <div className={styles.bodyDiv}>
+    <div className={styles.bodyContainer}>
+        <div className={styles.paginationDiv}>
             {pageNumbers.map(pageNumber => ( // por cada page number un boton con el numero y que al hacer click se ejecuta la funcion setCurrentPage(pageNumber)
                 <li key={pageNumber} className={styles.li}>
                     <button onClick={()=> paginate(pageNumber)}>
@@ -17,7 +18,7 @@ export default function Pagination({breedsPerPage, totalBreeds, paginate}) { // 
                     </button>
                 </li>
             ))}
-
+        </div>
     </div>
   )
 }

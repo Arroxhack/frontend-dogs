@@ -1,12 +1,20 @@
-.bodyDiv{
-    height: fit-content;
+.bodyContainer{
     display: flex;
-    position: relative;
+    width: 100vw;
     justify-content: center;
+    margin-top: 2vh;
+}
+
+.paginationDiv{
+    display: flex;
+    max-width: 65%;
+    flex-wrap: wrap;
+    padding: 2px;
+    background-color: rgba(255,255,255, 0.8);
 }
 
 
 .li{
     display: inline;
-    padding: 3px;
+    padding: 4px;
 }
