@@ -8,6 +8,7 @@ export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const FILTER_DB_OR_API_BREED = "FILTER_DB_OR_API_BREED";
 export const SEARCH_BREED_NAME = "SEARCH_BREED_NAME";
 export const POST_NEW_BREED = "POST_NEW_BREED";
+export const CURRENT_PAGE_FUNCTION = "CURRENT_PAGE_FUNCTION";
 
 
 export function getAllBreeds(){
@@ -26,7 +27,6 @@ export function getAllBreeds(){
     }
 };
 
-
 export function getAllTemperaments(){
     return async function(dispatch){
         try{
@@ -41,7 +41,7 @@ export function getAllTemperaments(){
             console.log(error)
         }
     }
-}
+};
 
 export function searchBreedName(name){
     return async function (dispatch){
@@ -56,28 +56,35 @@ export function searchBreedName(name){
             console.log(error)
         }
     }
-}
+};
 
-export function sort(order){
+export function sort(order){ // "ascendente" - "descendente" - "minWeight" - "maxWeight"
     return {
         type: SORT,
         payload: order
     }
-}
+};
 
 export function filterTemperament(temperament){
     return {
         type: FILTER_TEMPERAMENT,
         payload: temperament // "Stubborn"
     }
-}
+};
 
-export function filterDbOrApiBreeds(name){
+export function filterDbOrApiBreeds(name){ // "" - "Api" - "Db"
     return {
         type: FILTER_DB_OR_API_BREED,
-        payload: name // "Affenpinscher"
+        payload: name // "" - "Api" - "Db"
     }
-}
+};
+
+export function currentPageFunction(number){
+    return {
+        type: CURRENT_PAGE_FUNCTION,
+        payload: number
+    }
+};
 
 export function postNewBreed(newBreed){
     return async function(){
@@ -90,7 +97,7 @@ export function postNewBreed(newBreed){
             console.log(error)
         }
     }
-}
+};
 
 export async function getBreedDetail(id){
         try {
@@ -100,7 +107,7 @@ export async function getBreedDetail(id){
         } catch (error) {
             console.log(error)
         }
-}
+};
 
 
 

@@ -1,7 +1,26 @@
 
+.divContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttonSearch{
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.4)
+}
+
+.buttonSearch:hover{
+    background-color: rgba(255,255,255, 1);
+    cursor: pointer;
+}
+
+
+.imageSearch{
+    height: 22px;
+}
 
 .input{
     max-width: 200px;
-    width: 60%;
+    width: 70%;
     border: 2px solid black;
 }

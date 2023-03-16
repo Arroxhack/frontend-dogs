@@ -11,7 +11,7 @@ export default function Breeds(){
     const dispatch = useDispatch(); 
 
     const breeds = useSelector(state => state.breeds);
-    console.log("breeds: ", breeds) 
+    // console.log("breeds: ", breeds) 
     
     useEffect(() => { 
         // setLoading(true)
@@ -20,17 +20,13 @@ export default function Breeds(){
     }, [dispatch]) 
 
     // Get current breed
-    const [currentPage, setCurrentPage] = useState(1);
-    const [breedsPerPage] = useState(8);
-    const indexOfLastBreed = currentPage * breedsPerPage; // var = 1 *8 = 8 // 3 * 8 = 24
-    const indexOfFirstBreed = indexOfLastBreed - breedsPerPage; // var = 8 - 8 = 0 // 24 - 8 = 16
+    // const [currentPage, setCurrentPage] = useState(1); // -> pagina actual 1
+    const currentPage = useSelector(state => state.currentPage); // -> pagina actual 1
+    const [breedsPerPage] = useState(8); // -> 8 perros por pagina
+    const indexOfLastBreed = currentPage * breedsPerPage; // -> indice del ultimo perro = pagina actual * 8
+    const indexOfFirstBreed = indexOfLastBreed - breedsPerPage; // -> indice del primer perro = indice del ultimo perro - perros por pagina
     const currentBreeds = breeds.slice(indexOfFirstBreed, indexOfLastBreed); // 175 slice(inicio 0, final 8) // del 16 al 24
 
-
-    //Change page
-    function paginate(pageNumber){
-        setCurrentPage(pageNumber)
-    } 
 
     return(
         <div className={styles.bodyDiv}> 
@@ -49,7 +45,9 @@ export default function Breeds(){
 
                 typeof currentBreeds[0] === "string" 
                 ? 
-                <h4>{currentBreeds[0]}</h4> 
+                <div className={styles.noCreatedBreedsYet}>
+                    {currentBreeds[0]}
+                </div> 
                 :
                  currentBreeds.map(breed => {
                         return(
@@ -66,9 +64,8 @@ export default function Breeds(){
             </div>
 
                 <Pagination 
-                breedsPerPage={breedsPerPage} 
-                totalBreeds={breeds.length} 
-                paginate={paginate} 
+                breedsPerPage={breedsPerPage} // 8
+                totalBreeds={breeds.length} // numero total de perros en estado global breeds
                 />
 
         </div>
