@@ -45,7 +45,7 @@ export default function reducer(state=initialState, action){
             }
 
         case FILTER_TEMPERAMENT: //payload: "Stubborn" 
-            let {noModificationBreeds, order, filterBreed, filterTemperament} = state;
+            let {noModificationBreeds, order, filterBreed, /* filterTemperament */} = state;
             let filteredBreedsTemperament = action.payload === "" ? noModificationBreeds : noModificationBreeds.filter(breed => breed.temperament.includes(action.payload)); 
             if(filterBreed){
                 filteredBreedsTemperament = filterBreed === "Api" 
