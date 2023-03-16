@@ -45,7 +45,7 @@ export default function reducer(state=initialState, action){
             }
 
         case FILTER_TEMPERAMENT: //payload: "Stubborn" 
-            var {noModificationBreeds, order, filterBreed, filterTemperament} = state;
+            let {noModificationBreeds, order, filterBreed, filterTemperament} = state;
             let filteredBreedsTemperament = action.payload === "" ? noModificationBreeds : noModificationBreeds.filter(breed => breed.temperament.includes(action.payload)); 
             if(filterBreed){
                 filteredBreedsTemperament = filterBreed === "Api" 
@@ -88,22 +88,25 @@ export default function reducer(state=initialState, action){
             };
 
         case FILTER_DB_OR_API_BREED: // payload: "" - "Api" - "Db"
-            var {noModificationBreeds, order, filterBreed, filterTemperament} = state;
-            let filteredBreedsDbApi = action.payload === "" ? noModificationBreeds : action.payload === "Api" ? noModificationBreeds.filter(e => typeof e.id === "number") : noModificationBreeds.filter(e => typeof e.id === "string");
-            if(filterTemperament){
-                filteredBreedsDbApi = filteredBreedsDbApi.filter(breed => breed.temperament.includes(filterTemperament))
+            let noModificationBreeds2 = state.noModificationBreeds;
+            let order2 = state.order;
+            // let filterBreed2 = state.filterBreed;
+            let filterTemperament2 = state.filterTemperament;
+            let filteredBreedsDbApi = action.payload === "" ? noModificationBreeds2 : action.payload === "Api" ? noModificationBreeds2.filter(e => typeof e.id === "number") : noModificationBreeds2.filter(e => typeof e.id === "string");
+            if(filterTemperament2){
+                filteredBreedsDbApi = filteredBreedsDbApi.filter(breed => breed.temperament.includes(filterTemperament2))
             }
-            if(order){
+            if(order2){
                 filteredBreedsDbApi = filteredBreedsDbApi.sort((a, b) => {
-                    if(order === "ascendente" || order === "descendente"){
+                    if(order2 === "ascendente" || order2 === "descendente"){
                         if(a.name.toLowerCase() > b.name.toLowerCase()){
-                            return order === "ascendente" ? 1 : -1; 
+                            return order2 === "ascendente" ? 1 : -1; 
                         }
                         if(a.name.toLowerCase() < b.name.toLowerCase()){
-                            return order === "ascendente" ? -1 : 1;
+                            return order2 === "ascendente" ? -1 : 1;
                         }
                     }
-                    if(order === "minWeight"){
+                    if(order2 === "minWeight"){
                         if(a.min_weight > b.min_weight){
                             return 1; 
                         }
@@ -111,7 +114,7 @@ export default function reducer(state=initialState, action){
                             return -1;
                         }
                     }
-                    if(order === "maxWeight"){
+                    if(order2 === "maxWeight"){
                         if(a.max_weight > b.max_weight){
                             return -1; 
                         }
